@@ -17,7 +17,9 @@ generateBtn.addEventListener('click', function () {
 
     hideNotify("correctNotify");
     hideNotify("wrongNotify");
-    document.getElementById("disable").setAttribute("disabled");
+    
+    document.getElementById("disable").removeAttribute('disabled');
+    document.getElementById("count").innerText = 3;
 })
 
 // Submit pin functionality goes here
@@ -40,14 +42,12 @@ Array.from(buttons).forEach((btn) => {
 
         hideNotify("correctNotify");
         hideNotify("wrongNotify");
-
-        document.getElementById("disable").removeAttribute('disabled');
-        document.getElementById("count").innerText = 3;
     })
 })
 
 
 const submitBtn = document.querySelector(".submit-btn");
+
 
 
 submitBtn.addEventListener('click', function () {
@@ -62,7 +62,7 @@ submitBtn.addEventListener('click', function () {
         else {
             showNotify("wrongNotify");
         }
-        
+
         count--;
         document.getElementById("count").innerText = count;
     }
